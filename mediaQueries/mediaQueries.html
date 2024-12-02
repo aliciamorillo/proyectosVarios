@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo con Media Queries</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .box {
+      background-color: #4caf50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex: 1 1 calc(33.333% - 20px); /* 3 columnas con espacio entre ellas */
+      box-sizing: border-box;
+    }
+
+    /* Estilo para pantallas medianas (tabletas) */
+    @media (max-width: 768px) {
+      .box {
+        flex: 1 1 calc(50% - 20px); /* 2 columnas */
+      }
+    }
+
+    /* Estilo para pantallas pequeñas (teléfonos) */
+    @media (max-width: 480px) {
+      .box {
+        flex: 1 1 100%; /* 1 columna */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">Caja 1</div>
+    <div class="box">Caja 2</div>
+    <div class="box">Caja 3</div>
+    <div class="box">Caja 4</div>
+    <div class="box">Caja 5</div>
+    <div class="box">Caja 6</div>
+  </div>
+</body>
+</html>
